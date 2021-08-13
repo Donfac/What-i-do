@@ -12,27 +12,36 @@ ijnkd mkd ipmsrhrii ipmsr w dj kjb drry ytirhx bpr xwkmh
 mnbpjuwbt lnb yt rasruwrkvr cwbp qmbm pmi hrxb kj djnlb
 bpmb bpr xjhhjcwko wi bpr sujsru msshwvmbwjk mkd
 wkbrusurbmbwjk w jxxru yt bprjuwri wk bpr pjsr bpmb bpr
-riirkvr jx jqwkmcmk qmumbr cwhh urymwk wkbmvb"""
+riirkvr jx jqwkmcmk qmumbr cwhh urymwk wkbmvb""" 
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+# a class to restructure the code
+class Attack:
+    def __init__(self):
+            self.alphabet = "abcdefghijklmnopqrstuvwxyz"
+            self.freq = {}
+    def calculate_freq(self, cypher):
+            for c in self.alphabet:
+                self.freq[c] = 0        # set the freq of the character to zero
+            letter_count =0 #how many characters are there
 
-freq = {}
-for c in alphabet:
-    freq[c] = 0        # set the freq of the character to zero
-letter_count =0 #how many characters are there
+            for c in cipher: #count the freq of each letter
+                if c in self.freq:
+                    self.freq[c] += 1
+                    letter_count += 1
+            for c in self.freq:
+                self.freq[c]= round(self.freq[c]/letter_count,4)
+    def print_freq(self):
+        new_line_count = 0
+        for c in self.freq:
+            print(c,  ':', self.freq[c], ' ' , end='')
+            if new_line_count % 3 == 2:
+             print()
+            new_line_count += 1
+attack = Attack()
+attack.calculate.freq(cipher)
+attack.print_freq()
 
-for c in cipher: #count the freq of each letter
-    if c in freq:
-        freq[c] += 1
-        letter_count += 1
-for c in freq:
-    freq[c]= round(freq[c]/letter_count,4)
 
-new_line_count = 0
-for c in freq:
-    print(c,  ':', freq[c], ' ' , end='')
-    if new_line_count % 3 == 2:
-        print()
-    new_line_count += 1
+
 
 
