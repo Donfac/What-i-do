@@ -8,7 +8,7 @@ class KeyStream:
         return self.rand()% 256
 
 
-key = KeyStream(10)
+key = KeyStream(5)
 for i in range(10):
     print(key.get_key_bytes())
 
