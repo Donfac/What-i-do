@@ -97,7 +97,23 @@ attack.calculate_freq(cipher)
 attack.print_freq()
 attack.calculate_matches()
 
+attack.set_key_mapping('a', 'x')
+attack.set_key_mapping('d', 'd')
+attack.set_key_mapping('e', 'v')
+attack.set_key_mapping('m', 'a')
+attack.set_key_mapping('p', 'h')
+attack.set_key_mapping('q', 'k')
 attack.set_key_mapping('r', 'e')
+attack.set_key_mapping('s', 'p')
+attack.set_key_mapping('t', 'y')
+attack.set_key_mapping('u', 'r')
+attack.set_key_mapping('v', 'c')
+attack.set_key_mapping('w', 'i')
+attack.set_key_mapping('x', 'f')
+attack.set_key_mapping('y', 'm')
+
+
+
 
 #key = attack.guess_key()
 attack.guess_key()
@@ -105,7 +121,12 @@ key = attack.get_key()
 print()
 print(key)
 message=decrypt(key, cipher)
-print(message)
+message_lines = message.splitlines()
+cipher_lines = cipher.splitlines()
+# print(message)
+for i in range(len(message_lines)):
+    print('P:', message_lines[i])
+    print('C', cipher_lines[i])
 
 
 #for c in attack.mappings:
