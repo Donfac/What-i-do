@@ -19,7 +19,7 @@ print(cipher)
 
 key = KeyStream(5)
 message = encrypt(key,cipher)
-print(message)
+print(message) 
 #for i in range(10):
  #   print(key.get_key_bytes())
 
